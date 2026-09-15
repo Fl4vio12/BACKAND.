@@ -1,0 +1,73 @@
+4. Crie o ambiente virtual
+python -m venv .venv
+
+Isso criará:
+
+meu-projeto-fastapi/
+└── .venv/
+
+5. Ative o ambiente virtual
+Se estiver usando CMD:
+
+.venv\Scripts\activate
+
+6. Atualize o pip
+python -m pip install --upgrade pip
+
+7. Instale o FastAPI
+pip install "fastapi[standard]"
+
+Confira a instalação:
+
+pip show fastapi
+
+8. Crie o main.py
+Você pode criar o arquivo pelo VS Code, Notepad ou outro editor.
+
+O arquivo deve ficar assim:
+
+from fastapi import FastAPI
+app = FastAPI()
+
+
+@app.get("/")
+def read_root():
+    return {"message": "FastAPI funcionando!"}
+
+9. Execute o FastAPI
+Com o ambiente virtual ativado:
+
+fastapi dev main.py
+
+Você deverá receber uma mensagem indicando que o servidor está rodando em:
+
+http://127.0.0.1:8000
+
+10. Abra no navegador
+Acesse:
+
+http://127.0.0.1:8000
+
+Você verá:
+
+{
+    "message": "FastAPI funcionando!"
+}
+
+11. Abra a documentação automática
+O FastAPI gera uma interface para testar sua API.
+
+Acesse:
+
+http://127.0.0.1:8000/docs
+
+Você também pode acessar:
+
+http://127.0.0.1:8000/redoc
+
+12. Para parar o servidor
+No terminal:
+
+Ctrl + C
+
+Quando quiser iniciar
